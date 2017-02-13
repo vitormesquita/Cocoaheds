@@ -2,10 +2,14 @@
 # platform :ios, '9.0'
 
 target 'Cocoaheads' do
-  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
-  use_frameworks!
 
-  # Pods for Cocoaheads
+  use_frameworks!
+  
+  pod 'Moya-ObjectMapper/RxSwift'
+  pod 'Moya'
+  pod 'RxSwift'
+  pod 'RxCocoa'
+#  pod 'Cartography'
 
   target 'CocoaheadsTests' do
     inherit! :search_paths

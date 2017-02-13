@@ -15,7 +15,9 @@
 		FC18F2C31E5257AB00FC9907 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC18F2C21E5257AB00FC9907 /* Assets.xcassets */; };
 		FC18F2C61E5257AB00FC9907 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC18F2C41E5257AB00FC9907 /* LaunchScreen.storyboard */; };
 		FC18F2D11E5257AB00FC9907 /* CocoaheadsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC18F2D01E5257AB00FC9907 /* CocoaheadsTests.swift */; };
-		FC18F2DD1E52654A00FC9907 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC18F2DC1E52654A00FC9907 /* ApiClient.swift */; };
+		FC18F2E31E526F9E00FC9907 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC18F2E21E526F9E00FC9907 /* Repository.swift */; };
+		FC18F2E51E5271C400FC9907 /* RepositoriesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC18F2E41E5271C400FC9907 /* RepositoriesResponse.swift */; };
+		FC18F2E71E52722200FC9907 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC18F2E61E52722200FC9907 /* APIClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,7 +46,9 @@
 		FC18F2CC1E5257AB00FC9907 /* CocoaheadsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CocoaheadsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC18F2D01E5257AB00FC9907 /* CocoaheadsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocoaheadsTests.swift; sourceTree = "<group>"; };
 		FC18F2D21E5257AC00FC9907 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FC18F2DC1E52654A00FC9907 /* ApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
+		FC18F2E21E526F9E00FC9907 /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		FC18F2E41E5271C400FC9907 /* RepositoriesResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoriesResponse.swift; sourceTree = "<group>"; };
+		FC18F2E61E52722200FC9907 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		FC7E032928555627C6D3A21C /* Pods-Cocoaheads.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cocoaheads.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cocoaheads/Pods-Cocoaheads.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -111,12 +115,12 @@
 		FC18F2BA1E5257AB00FC9907 /* Cocoaheads */ = {
 			isa = PBXGroup;
 			children = (
-				FC18F2DB1E52652600FC9907 /* Api */,
-				FC18F2BB1E5257AB00FC9907 /* AppDelegate.swift */,
+				FC18F2DE1E52699900FC9907 /* data */,
 				FC18F2BD1E5257AB00FC9907 /* ViewController.swift */,
+				FC18F2BB1E5257AB00FC9907 /* AppDelegate.swift */,
 				FC18F2BF1E5257AB00FC9907 /* Main.storyboard */,
-				FC18F2C21E5257AB00FC9907 /* Assets.xcassets */,
 				FC18F2C41E5257AB00FC9907 /* LaunchScreen.storyboard */,
+				FC18F2C21E5257AB00FC9907 /* Assets.xcassets */,
 				FC18F2C71E5257AB00FC9907 /* Info.plist */,
 			);
 			path = Cocoaheads;
@@ -131,12 +135,30 @@
 			path = CocoaheadsTests;
 			sourceTree = "<group>";
 		};
-		FC18F2DB1E52652600FC9907 /* Api */ = {
+		FC18F2DB1E52652600FC9907 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				FC18F2DC1E52654A00FC9907 /* ApiClient.swift */,
+				FC18F2E61E52722200FC9907 /* APIClient.swift */,
 			);
-			path = Api;
+			path = API;
+			sourceTree = "<group>";
+		};
+		FC18F2DE1E52699900FC9907 /* data */ = {
+			isa = PBXGroup;
+			children = (
+				FC18F2DF1E5269F300FC9907 /* Entities */,
+				FC18F2DB1E52652600FC9907 /* API */,
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
+		FC18F2DF1E5269F300FC9907 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				FC18F2E21E526F9E00FC9907 /* Repository.swift */,
+				FC18F2E41E5271C400FC9907 /* RepositoriesResponse.swift */,
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -341,9 +363,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC18F2E51E5271C400FC9907 /* RepositoriesResponse.swift in Sources */,
 				FC18F2BE1E5257AB00FC9907 /* ViewController.swift in Sources */,
+				FC18F2E31E526F9E00FC9907 /* Repository.swift in Sources */,
+				FC18F2E71E52722200FC9907 /* APIClient.swift in Sources */,
 				FC18F2BC1E5257AB00FC9907 /* AppDelegate.swift in Sources */,
-				FC18F2DD1E52654A00FC9907 /* ApiClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,6 +506,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FC7E032928555627C6D3A21C /* Pods-Cocoaheads.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Cocoaheads/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -495,6 +520,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 47904E574D686F7BDD117F65 /* Pods-Cocoaheads.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Cocoaheads/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -508,7 +534,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A213193336C80E2148908236 /* Pods-CocoaheadsTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = CocoaheadsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -523,7 +549,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 01D6975AE3F9A1C9BB7730FD /* Pods-CocoaheadsTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = CocoaheadsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

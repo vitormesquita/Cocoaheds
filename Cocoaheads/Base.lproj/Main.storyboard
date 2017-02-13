@@ -1,14 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Cocoaheads" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,10 +20,42 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="HDt-GK-HBW">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5rg-zq-zqS">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="HDt-GK-HBW" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="5Hg-MN-HaB"/>
+                            <constraint firstItem="5rg-zq-zqS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Csm-mh-nl4"/>
+                            <constraint firstAttribute="trailing" secondItem="5rg-zq-zqS" secondAttribute="trailing" id="JlC-di-cEB"/>
+                            <constraint firstAttribute="trailing" secondItem="HDt-GK-HBW" secondAttribute="trailing" id="NEv-7d-moy"/>
+                            <constraint firstItem="HDt-GK-HBW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="QYU-gC-SM3"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="5rg-zq-zqS" secondAttribute="bottom" id="bHt-sT-Pmr"/>
+                            <constraint firstItem="5rg-zq-zqS" firstAttribute="top" secondItem="HDt-GK-HBW" secondAttribute="bottom" id="lDU-Z5-8Me"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="searchBar" destination="HDt-GK-HBW" id="Vve-4y-OId"/>
+                        <outlet property="searchDisplayController" destination="ROd-27-61C" id="KYx-Es-gGS"/>
+                        <outlet property="tableView" destination="5rg-zq-zqS" id="TYc-dz-F8u"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="ROd-27-61C">
+                    <connections>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="oTa-7M-Blp"/>
+                        <outlet property="searchContentsController" destination="BYZ-38-t0r" id="uYj-cm-IE5"/>
+                        <outlet property="searchResultsDataSource" destination="BYZ-38-t0r" id="mrS-k3-5IE"/>
+                        <outlet property="searchResultsDelegate" destination="BYZ-38-t0r" id="BrS-rZ-Zw8"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
         </scene>
     </scenes>
