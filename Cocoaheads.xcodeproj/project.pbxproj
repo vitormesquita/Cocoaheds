@@ -18,6 +18,8 @@
 		FC18F2E31E526F9E00FC9907 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC18F2E21E526F9E00FC9907 /* Repository.swift */; };
 		FC18F2E51E5271C400FC9907 /* RepositoriesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC18F2E41E5271C400FC9907 /* RepositoriesResponse.swift */; };
 		FC18F2E71E52722200FC9907 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC18F2E61E52722200FC9907 /* APIClient.swift */; };
+		FC75570D1E527EED0087BA5E /* RepositoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC75570B1E527EED0087BA5E /* RepositoryTableViewCell.swift */; };
+		FC75570E1E527EED0087BA5E /* RepositoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC75570C1E527EED0087BA5E /* RepositoryTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		FC18F2E21E526F9E00FC9907 /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		FC18F2E41E5271C400FC9907 /* RepositoriesResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoriesResponse.swift; sourceTree = "<group>"; };
 		FC18F2E61E52722200FC9907 /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		FC75570B1E527EED0087BA5E /* RepositoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryTableViewCell.swift; sourceTree = "<group>"; };
+		FC75570C1E527EED0087BA5E /* RepositoryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RepositoryTableViewCell.xib; sourceTree = "<group>"; };
 		FC7E032928555627C6D3A21C /* Pods-Cocoaheads.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cocoaheads.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cocoaheads/Pods-Cocoaheads.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -116,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				FC18F2DE1E52699900FC9907 /* data */,
+				FC75570A1E527E8D0087BA5E /* cells */,
 				FC18F2BD1E5257AB00FC9907 /* ViewController.swift */,
 				FC18F2BB1E5257AB00FC9907 /* AppDelegate.swift */,
 				FC18F2BF1E5257AB00FC9907 /* Main.storyboard */,
@@ -159,6 +164,15 @@
 				FC18F2E41E5271C400FC9907 /* RepositoriesResponse.swift */,
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		FC75570A1E527E8D0087BA5E /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				FC75570B1E527EED0087BA5E /* RepositoryTableViewCell.swift */,
+				FC75570C1E527EED0087BA5E /* RepositoryTableViewCell.xib */,
+			);
+			path = cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -253,6 +267,7 @@
 				FC18F2C61E5257AB00FC9907 /* LaunchScreen.storyboard in Resources */,
 				FC18F2C31E5257AB00FC9907 /* Assets.xcassets in Resources */,
 				FC18F2C11E5257AB00FC9907 /* Main.storyboard in Resources */,
+				FC75570E1E527EED0087BA5E /* RepositoryTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,6 +381,7 @@
 				FC18F2E51E5271C400FC9907 /* RepositoriesResponse.swift in Sources */,
 				FC18F2BE1E5257AB00FC9907 /* ViewController.swift in Sources */,
 				FC18F2E31E526F9E00FC9907 /* Repository.swift in Sources */,
+				FC75570D1E527EED0087BA5E /* RepositoryTableViewCell.swift in Sources */,
 				FC18F2E71E52722200FC9907 /* APIClient.swift in Sources */,
 				FC18F2BC1E5257AB00FC9907 /* AppDelegate.swift in Sources */,
 			);

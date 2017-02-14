@@ -35,7 +35,7 @@ class ViewController: UIViewController {
             .filter({ (text) -> Bool in
                 return text!.characters.count >= 3
             })
-            .debounce(0.5, scheduler: MainScheduler.instance)
+            .debounce(0.8, scheduler: MainScheduler.instance)
             .bindNext({[weak self] (query) in
                 guard let strongSelf = self, let query = query else { return }
                 strongSelf.searchRepositories(query: query)
@@ -44,8 +44,12 @@ class ViewController: UIViewController {
     }
     
     private func configureTableView() {
+        tableView.delegate = self
         tableView.dataSource = self
         tableView.tableFooterView = UIView()
+        tableView.estimatedRowHeight = 96
+        tableView.separatorColor = .clear
+        tableView.register(UINib(nibName: "RepositoryTableViewCell", bundle: nil), forCellReuseIdentifier: "RepositoryTableViewCell")
     }
     
     private func searchRepositories(query: String) {
@@ -70,7 +74,7 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: UITableViewDataSource {
+extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let repositories = repositories {
@@ -80,6 +84,16 @@ extension ViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let repositories = repositories {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "RepositoryTableViewCell", for: indexPath) as! RepositoryTableViewCell
+            cell.populate(with: repositories[indexPath.row])
+            return cell
+        }
+        
         return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
