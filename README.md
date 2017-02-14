@@ -6,7 +6,7 @@
 
 # Used libraries
 
-*[RxSwift](https://github.com/ReactiveX/RxSwift)
-*[RxCocoa](https://github.com/ReactiveX/RxSwift/tree/master/RxCocoa)
-*[Moya](https://github.com/Moya/Moya)
-*[Moya/ObjectMapper/RxSwfit](https://github.com/ivanbruel/Moya-ObjectMapper)
+- [RxSwift](https://github.com/ReactiveX/RxSwift)
+- [RxCocoa](https://github.com/ReactiveX/RxSwift/tree/master/RxCocoa)
+- [Moya](https://github.com/Moya/Moya)
+- [Moya/ObjectMapper/RxSwfit](https://github.com/ivanbruel/Moya-ObjectMapper)
